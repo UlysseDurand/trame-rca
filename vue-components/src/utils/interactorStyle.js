@@ -240,10 +240,10 @@ function vtkInteractorStyleRemoteMouse(publicAPI, model) {
   };
 
   //----------------------------------------------------------------------------
-
+  let lastRotateEvent = {};
   publicAPI.handleRotate = (callData) => {
     const { rotation, touches: positions } = callData;
-    model.lastRotateEvent = {
+    lastRotateEvent = {
       rotation,
       positions,
     };
@@ -261,7 +261,7 @@ function vtkInteractorStyleRemoteMouse(publicAPI, model) {
     publicAPI.endRotate();
     publicAPI.invokeRemoteGestureEvent({
       type: 'EndRotate',
-      ...model.lastRotateEvent,
+      ...lastRotateEvent,
       ...model.remoteEventAddOn,
     });
     // model._interactor.cancelAnimation(publicAPI.handleStartRotate);
@@ -284,10 +284,10 @@ function vtkInteractorStyleRemoteMouse(publicAPI, model) {
   };
 
   //----------------------------------------------------------------------------
-
+  let lastPanEvent = {};
   publicAPI.handlePan = (callData) => {
     const { translation, touches: positions } = callData;
-    model.lastPanEvent = {
+    lastPanEvent = {
       translation,
       positions,
     };
@@ -305,7 +305,7 @@ function vtkInteractorStyleRemoteMouse(publicAPI, model) {
     publicAPI.endPan();
     publicAPI.invokeRemoteGestureEvent({
       type: 'EndPan',
-      ...model.lastPanEvent,
+      ...lastPanEvent,
       ...model.remoteEventAddOn,
     });
     // model._interactor.cancelAnimation(publicAPI.handleStartPan);
