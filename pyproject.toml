@@ -1,6 +1,6 @@
 [project]
 name = "trame-rca"
-version = "2.6.2"
+version = "2.7.0"
 description = "Remote Controlled Area widget for trame"
 authors = [
     {name = "Kitware Inc."},
@@ -48,13 +48,8 @@ turbo = [
 ]
 vtkstreaming = [
     "vtk",
-    "vtk-streaming>=0.3.2",
+    "vtk-streaming>=0.4.0",
 ]
-
-
-
-
-
 
 
 
