@@ -1,6 +1,46 @@
 # CHANGELOG
 
 
+## v2.8.0 (2026-07-28)
+
+### Bug Fixes
+
+- **js**: Use private lastPinchEvent
+  ([`cd54143`](https://github.com/Kitware/trame-rca/commit/cd541431f3820489ac4a9df82684333f0904b10f))
+
+### Chores
+
+- Add changelog to codespell ignored files
+  ([`8216cde`](https://github.com/Kitware/trame-rca/commit/8216cde40aee6d542c0941cc53b98f8d824399d8))
+
+### Code Style
+
+- Make private lastRotateEvent and lastPanEvent
+  ([`8410d12`](https://github.com/Kitware/trame-rca/commit/8410d12effe72758fec02179731795d0270505e0))
+
+### Documentation
+
+- **example**: Add touch example
+  ([`1bc8b90`](https://github.com/Kitware/trame-rca/commit/1bc8b90190a0bbdcd3f2370bae9f039c126760ad))
+
+### Features
+
+- Add throttling of gesture events
+  ([`7286d5b`](https://github.com/Kitware/trame-rca/commit/7286d5baa29628d82ba39fd34704230af9068794))
+
+- Handle two-finger gestures
+  ([`f51f5fa`](https://github.com/Kitware/trame-rca/commit/f51f5fa6d40ae87a3c8f10a82252d2b1d4d20823))
+
+### Refactoring
+
+- Remove first layer of event throttling
+  ([`5a1bf04`](https://github.com/Kitware/trame-rca/commit/5a1bf04784aa3d6490cb60b58ca38201b6e75b92))
+
+This first layer of throttling was deactivated and is now removed. It consisted in not sending the
+  events if the last event of the same type was sent too recently. The "second" layer of throttling
+  in `EventThrottle.js` handles everything.
+
+
 ## v2.7.0 (2026-07-11)
 
 ### Bug Fixes
