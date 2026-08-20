@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v2.8.1 (2026-08-20)
+
+### Bug Fixes
+
+- Prevent selection of the RCA on iOS to catch all interactions
+  ([`a2eab3f`](https://github.com/Kitware/trame-rca/commit/a2eab3f1add10f7009f4a3e40051639b3f6b1129))
+
+
 ## v2.8.0 (2026-07-28)
 
 ### Bug Fixes
