@@ -1,6 +1,16 @@
 # CHANGELOG
 
 
+## v2.9.0 (2026-08-21)
+
+### Features
+
+- Forward Tap/LongTap events from vtk.js
+  ([`a66ce94`](https://github.com/Kitware/trame-rca/commit/a66ce9448e681ac8941fd75604e64643845f88a8))
+
+The vtk-js version is bumped for vtk-js to send Tap and LongTap events
+
+
 ## v2.8.1 (2026-08-20)
 
 ### Bug Fixes
