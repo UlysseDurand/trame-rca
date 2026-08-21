@@ -313,6 +313,27 @@ function vtkInteractorStyleRemoteMouse(publicAPI, model) {
   };
 
   //-------------------------------------------------------------------------
+  // Tap / LongTap gestures
+  //-------------------------------------------------------------------------
+  publicAPI.handleTap = (callData) => {
+    publicAPI.invokeRemoteTapEvent({
+      type: 'Tap',
+      position: callData.position,
+      deviceType: callData.deviceType,
+      ...model.remoteEventAddOn,
+    });
+  };
+
+  publicAPI.handleLongTap = (callData) => {
+    publicAPI.invokeRemoteLongTapEvent({
+      type: 'LongTap',
+      position: callData.position,
+      deviceType: callData.deviceType,
+      ...model.remoteEventAddOn,
+    });
+  };
+
+  //-------------------------------------------------------------------------
   // Keys
   //-------------------------------------------------------------------------
 
@@ -360,6 +381,8 @@ export function extend(publicAPI, model, initialValues = {}) {
   macro.event(publicAPI, model, 'RemoteWheelEvent');
   macro.event(publicAPI, model, 'RemoteGestureEvent');
   macro.event(publicAPI, model, 'RemoteKeyEvent');
+  macro.event(publicAPI, model, 'RemoteTapEvent');
+  macro.event(publicAPI, model, 'RemoteLongTapEvent');
 
   // Object specific methods
   vtkInteractorStyleRemoteMouse(publicAPI, model);

@@ -143,6 +143,23 @@ export default {
         )
       );
     });
+    // Tap / LongTap
+    interactorStyle.onRemoteTapEvent((e) => {
+      sendEvent(
+        Object.assign(
+          { w: currentSizeUpdateEvent.w, h: currentSizeUpdateEvent.h },
+          e
+        )
+      );
+    });
+    interactorStyle.onRemoteLongTapEvent((e) => {
+      sendEvent(
+        Object.assign(
+          { w: currentSizeUpdateEvent.w, h: currentSizeUpdateEvent.h },
+          e
+        )
+      );
+    });
     // Interaction Events
     interactorStyle.onStartInteractionEvent((e) => {
       sendEvent(e);
