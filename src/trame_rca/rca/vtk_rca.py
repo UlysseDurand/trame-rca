@@ -6,7 +6,7 @@ from trame_common.utils import profiler
 from vtkmodules.util.numpy_support import vtk_to_numpy
 from vtkmodules.vtkCommonCore import vtkCommand, vtkVersion
 from vtkmodules.vtkRenderingCore import vtkRenderWindow, vtkWindowToImageFilter
-from vtkmodules.vtkWebCore import vtkRemoteInteractionAdapter
+from vtk_fixed.vtkFixedWebCore import vtkFixedRemoteInteractionAdapter
 
 
 VTK_NEED_RESIZE_EVENT = Version(vtkVersion().vtk_version) < Version("9.5")
@@ -62,4 +62,4 @@ class VtkRemoteControlledArea:
         if event_type in ["StartInteractionEvent", "EndInteractionEvent"]:
             return
 
-        vtkRemoteInteractionAdapter.ProcessEvent(self._iren, json.dumps(event))
+        vtkFixedRemoteInteractionAdapter.ProcessEvent(self._iren, json.dumps(event))
